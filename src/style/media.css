@@ -1,0 +1,25 @@
+/* Mobile / telas pequenas */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3em; /* reduz tamanho do título */
+        padding: 10px;
+    }
+
+    header p {
+        font-size: 1.2em; /* reduz tamanho do parágrafo */
+        margin-top: 8px;
+        padding: 0 20px; /* evita que o texto encoste nas bordas */
+    }
+
+    header .buttons {
+        flex-direction: column; /* coloca os botões em coluna */
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    header .buttons button {
+        width: 80%; /* ocupa mais espaço na tela pequena */
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
