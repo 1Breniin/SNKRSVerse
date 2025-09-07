@@ -1,264 +1,378 @@
+/* ==========================
+   Variáveis e Reset Global
+   ========================== */
 @charset "UTF-8";
 
-/* Animações */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 16ch; } /* ajuste para o número de caracteres do texto */
+:root {
+    --primary: #ff8800;
+    --primary-dark: #ff6600;
+    --bg-dark: #181818;
+    --bg-light: #fff;
+    --text-dark: #111;
+    --text-light: #fff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.3);
+    --radius: 15px;
+    --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    --font-main: "DM Sans", Arial, Helvetica, sans-serif;
 }
 
-@keyframes remove-caret {
-    from { border-right-color: orange; }
-    to { border-right-color: transparent; }
-}
-
-/* Reset + fonte */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-main);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    height: 100%;
-    overflow-x: hidden; /* só remove rolagem lateral */
+    min-height: 100vh;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
     position: relative;
-    font-family: "DM Sans", sans-serif;
 }
 
-body::before {
-    content: "";
+/* ==========================
+   Animações
+   ========================== */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 16ch; }
+}
+@keyframes remove-caret {
+    from { border-right-color: var(--primary); }
+    to { border-right-color: transparent; }
+}
+
+/* ==========================
+   Navbar
+   ========================== */
+.navbar {
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.774);
-    z-index: 0;
-    pointer-events: none;
+    top: 0; left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background: var(--bg-dark); /* Alterado para fundo escuro */
+    transition: background var(--transition), box-shadow var(--transition);
 }
 
-/* Header */
+.navbar.scrolled {
+    background: rgba(0,0,0,0.85);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: transform var(--transition);
+}
+.logo img:hover {
+    transform: scale(1.08);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+.nav-links li a {
+    color: var(--text-light);
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+    position: relative;
+}
+.nav-links li a:hover,
+.navbar.scrolled .nav-links li a {
+    color: var(--primary);
+}
+.nav-links li a:focus {
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 2px;
+}
+
+/* ==========================
+   Header
+   ========================== */
 header {
-    min-height: 100vh; 
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     text-align: center;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
     background: url('../images/IMAGEMFUNDo.webp') no-repeat center center/cover;
-    background-size: cover;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    line-height: 1.6;
     padding: 20px;
-    backdrop-filter: blur(5px);
-
 }
 header::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.747); /* camada escura */
-    z-index: -1;  
+    background: rgba(0,0,0,0.78);
+    z-index: -1;
 }
-
-header h1, 
-main h1 {
-    padding: 15px;
-    font-size: 5em;
-    letter-spacing: .1em;
+.header-content {
+    margin-top: 80px;
+}
+header h1 {
+    padding: 15px 0;
+    font-size: 4.5em;
+    letter-spacing: .08em;
     white-space: nowrap;
     overflow: hidden;
-    border-right: .15em solid orange;
-    animation: typing 2s steps(30, end), remove-caret 0.1s forwards 2s; 
+    border-right: .15em solid var(--primary);
+    animation: typing 2s steps(30, end), remove-caret 0.1s forwards 2s;
 }
-
 .highlight {
-    color: rgb(255, 136, 0); /* ou #ff6600 para um laranja mais vibrante */
+    color: var(--primary);
 }
-
 header p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-top: 10px;
-    font-weight: normal;
+    font-weight: 400;
 }
-
-/* Botões lado a lado */
 header .buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-}
-
-header .buttons a {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid orange;
-    color: white;
-    padding: 14px 28px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-}
-
-header .buttons a:hover {
-    transform: scale(1.1);
-    background: rgba(255, 165, 0, 0.8);
-    color: #000;
-    box-shadow: 0 0 15px orange;
-}
-
-/* Main */
-main {
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    text-align: center;
-    color: rgb(0, 0, 0);
-    position: relative;
-    z-index: 1;
-    padding: 40px 20px;
-    background: #ffffff;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    line-height: 1.6;
-}
-
-main h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
-    color: #000000;
-
-}
-
-main p {
-    font-size: 1.2em;
-    max-width: 600px;
-    line-height: 1.6;
-    padding: 0 20px;
-    color: #000;
-    margin-bottom: 40px;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    text-align: justify;
-
-}
-
-
-
-.sneaker-showcase {
+    margin-top: 32px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
-    margin-bottom: 40px;
-    backdrop-filter: blur(10px);
-    transition: box-shadow 0.3s ease;
-    max-width: 90%;
-    margin: 20px auto;
-
 }
-
-.sneaker-showcase p {
-    font-size: 0.9em;
-    color: #000000;
-    margin-top: 5px;
-    text-align: center;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    padding: 0 5px;
-    line-height: 1.4;
-    max-width: 250px;
-    margin: 10px auto 0 auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-}
-
-.sneaker-showcase img {
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+header .buttons a {
+    background: rgba(255,255,255,0.08);
+    border: 2px solid var(--primary);
+    color: var(--text-light);
+    padding: 14px 32px;
+    font-size: 1.1em;
     cursor: pointer;
-    background: white;
-    padding: 10px;
+    border-radius: var(--radius);
+    backdrop-filter: blur(5px);
+    transition: all var(--transition);
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+header .buttons a:hover,
+header .buttons a:focus {
+    background: var(--primary);
+    color: var(--text-dark);
+    transform: translateY(-2px) scale(1.07);
+    box-shadow: 0 0 18px var(--primary);
+    outline: none;
+}
+
+/* ==========================
+   Main & Sections
+   ========================== */
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 16px 0 16px;
+    background: var(--bg-light);
+}
+main h1, main h2 {
+    color: var(--text-dark);
+    margin-bottom: 18px;
+}
+main p {
+    font-size: 1.15em;
+    max-width: 650px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 36px;
+    text-align: justify;
+}
+
+/* Sneaker Showcase */
+.sneaker-showcase {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 24px 0;
+    margin-bottom: 40px;
+    backdrop-filter: blur(8px);
+    max-width: 98vw;
+}
+.sneaker-item {
+    background: #fafafaee;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px 12px 12px 12px;
+    transition: box-shadow var(--transition), transform var(--transition);
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sneaker-item:hover {
+    box-shadow: 0 8px 28px var(--primary);
+    transform: translateY(-4px) scale(1.03);
+}
+.sneaker-showcase img {
+    width: 210px;
+    height: 210px;
+    border-radius: var(--radius);
     object-fit: cover;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+
+.sneaker-brand {
+    font-size: 1.1em;
+    color: var(--primary-dark);
+    margin-top: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+/* Sneaker do Dia */
+.sneaker-dia {
+    background: #f7f7f7;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px 20px;
+    margin: 0 auto 48px auto;
+    max-width: 900px;
+    width: 90vw;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: box-shadow var(--transition), transform var(--transition);  
+    
+}
+.sneaker-dia h2 {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+}
+.sneaker-dia-content {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sneaker-dia-content img {
+    width: 180px;
+    height: 180px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    box-shadow: 0 4px 18px var(--primary);
+    background: #fff;
+}
+.sneaker-dia-content h3 {
+    margin-top: 0;
+    color: var(--primary);
+    font-size: 1.4em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.04em;
+    max-width: 300px;
+
+}
+.sneaker-dia-content p {
+    color: var(--text-dark);
+    margin: 12px 0 18px 0;
+    font-size: 1.1em;
+    max-width: 350px;
+    text-align: center;
+    line-height: 1.6;
+
+}
+.sneaker-dia-content .btn {
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 24px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+    display: inline-block;
+}
+.sneaker-dia-content .btn:hover {
+    background: var(--primary-dark);
+    color: var(--text-light);
+    transition: transform var(--transition), box-shadow var(--transition);
 
 }
 
-.sneaker-showcase img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px orange;
-}
-
-.sneaker-showcase img:active {
-    transform: scale(0.95);
-}
-
+/* About Section */
 .about {
     max-width: 800px;
     margin: 0 auto 60px auto;
-    padding: 0 20px;
+    padding: 0 10px;
     text-align: left;
 }
-
 .about h2 {
-    font-size: 2.5em;
-    margin-bottom: 15px;
+    font-size: 2.2em;
+    margin-bottom: 12px;
     text-align: center;
-    color: #000000;
+    color: var(--primary-dark);
 }
 .about p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-size: 1.08em;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 18px;
     text-align: justify;
-    letter-spacing: 0.02em;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    color: #000;
-    padding: 0 10px;
-    margin-bottom: 20px;
 }
-
+.about p:last-child {
+    margin-bottom: 0;
+}
 
 footer {
-    color: white;
+    color: var(--text-light);
     text-align: center;
+    background: var(--bg-dark);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+    font-size: 1em;
+    padding: 18px 10px;
+    letter-spacing: 0.04em;
     position: relative;
     z-index: 1;
-    font-family: "DM Sans", sans-serif;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-    line-height: 1.6;
-    letter-spacing: 0.05em;
-    background: #222;
-    transition: background 0.3s ease;
-    font-weight: normal;
-    font-size: 1em;
-    padding: 15px 10px;
 }
-
 footer a {
-    color: orange;
+    color: var(--primary);
     text-decoration: none;
     margin: 0 10px;
-    transition: color 0.3s ease;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color var(--transition);
 }
-
-footer a:hover {
+footer a:hover, footer a:focus {
     text-decoration: underline;
-    color: #ff6600;
+    color: var(--primary-dark);
+    outline: none;
 }
 
+/* ==========================
+   Acessibilidade & Utilidades
+   ========================== */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}

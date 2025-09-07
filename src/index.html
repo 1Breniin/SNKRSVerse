@@ -3,57 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNKRS Verse</title>
+    <title>SNKRS Verse - Universo dos Sneakers Exclusivos</title>
+    <meta name="description" content="Explore o universo dos sneakers mais exclusivos. Onde paixão e estilo se encontram.">
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/media.css">
 </head>
 <body>
     <header>
-        <h1>
-            SNKRS <span class="highlight">Verse</span>
-        </h1>
-        <p>
-            Explore o universo dos sneakers mais exclusivos.<br>
-            Onde paixão e estilo se encontram.
-        </p>
-        <div class="buttons">
-            <a>Explorar coleção</a>
-            <a>Saiba mais</a>
+        <nav class="navbar" aria-label="Menu principal">
+            <div class="logo">
+                <a href="index.html" aria-label="Página inicial SNKRS Verse">
+                    <img src="images/Logo.webp" alt="Logo SNKRS Verse">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-current="page">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>
+                SNKRS <span class="highlight">Verse</span>
+            </h1>
+            <p>
+                Explore o universo dos sneakers mais exclusivos.<br>
+                Onde paixão e estilo se encontram.
+            </p>
+            <div class="buttons">
+                <a href="#colecao" class="btn">Explorar coleção</a>
+                <a href="sobre.html" class="btn btn-secondary">Saiba mais</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="sneaker-showcase">
-    <div class="sneaker-item">
-        <img src="images/Adidas1.avif" alt="Adidas">
-        <p class="sneaker-brand">Adidas</p>
-    </div>
-    <div class="sneaker-item">
-        <img src="images/NIKE1.avif" alt="Nike">
-        <p class="sneaker-brand">Nike</p>
-    </div>
-    <div class="sneaker-item">
-        <img src="images/JORDAN1.avif" alt="Jordan">
-        <p class="sneaker-brand">Jordan</p>
-    </div>
-    <div class="sneaker-item">
-        <img src="images/PUMA1.avif" alt="Puma">
-        <p class="sneaker-brand">Puma</p>
-    </div>
-    
-</section>
+    <section class="sneaker-showcase" id="colecao" aria-label="Coleção de Sneakers">
+        <h2 class="visually-hidden">Coleção de Sneakers</h2>
+        <div class="sneaker-item">
+            <img src="images/Adidas1.avif" alt="Tênis Adidas edição limitada" loading="lazy">
+            <p class="sneaker-brand">Adidas</p>
+        </div>
+        <div class="sneaker-item">
+            <img src="images/NIKE1.avif" alt="Tênis Nike exclusivo" loading="lazy">
+            <p class="sneaker-brand">Nike</p>
+        </div>
+        <div class="sneaker-item">
+            <img src="images/JORDAN1.avif" alt="Tênis Jordan especial" loading="lazy">
+            <p class="sneaker-brand">Jordan</p>
+        </div>
+        <div class="sneaker-item">
+            <img src="images/PUMA1.avif" alt="Tênis Puma raro" loading="lazy">
+            <p class="sneaker-brand">Puma</p>
+        </div>
+    </section>
+
+    <!-- Sneaker do Dia -->
+    <section class="sneaker-dia" aria-label="Sneaker do Dia">
+        <h2>Sneaker do Dia</h2>
+        <div class="sneaker-dia-content">
+            <img src="images/JORDAN1.avif" alt="Air Jordan 1 Chicago" loading="lazy">
+            <div>
+                <h3>Air Jordan 1 Chicago</h3>
+                <p>
+                    Um dos modelos mais icônicos da história dos sneakers, o Air Jordan 1 Chicago representa o início da parceria lendária entre Michael Jordan e a Nike. Lançado em 1985, este tênis é desejado por colecionadores do mundo todo.
+                </p>
+                <a href="https://www.nike.com.br/" target="_blank" class="btn">Ver mais detalhes</a>
+            </div>
+        </div>
+    </section>
+
         <section class="about">
             <h2>Sobre SNKRS Verse</h2>
             <p>
-                SNKRS Verse é mais do que uma loja de sneakers; é uma comunidade para entusiastas de calçados. 
+                SNKRS Verse é uma comunidade para entusiastas de calçados.
                 Descubra edições limitadas, colaborações exclusivas e as últimas tendências do mundo sneaker.
             </p>
         </section>
-
     </main>
 
     <footer>
-        <p>2025 SNKRS Verse. Todos os direitos reservados.</p>
+        <p>&copy; 2025 SNKRS Verse. Todos os direitos reservados.</p>
         <p>
             <a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a>
         </p>
