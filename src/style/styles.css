@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Animações */
 @keyframes typing {
     from { width: 0; }
     to { width: 16ch; } /* ajuste para o número de caracteres do texto */
@@ -8,56 +9,67 @@
 @keyframes remove-caret {
     from { border-right-color: orange; }
     to { border-right-color: transparent; }
-
 }
 
-*{
+/* Reset + fonte */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
     font-family: "DM Sans", sans-serif;
 }
 
 body {
     margin: 0;
-    background: url('../image3.webp') no-repeat center center fixed;
-    height: 100vh;
-    overflow: hidden; /* sem rolagem */
+    height: 100%;
+    overflow-x: hidden; /* só remove rolagem lateral */
+    position: relative;
+    font-family: "DM Sans", sans-serif;
 }
 
 body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.774);
-  z-index: 0;
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.774);
+    z-index: 0;
+    pointer-events: none;
 }
 
+/* Header */
 header {
-    height: 100vh; 
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
     text-align: center;
     color: white;
-    font-weight: bold;
     position: relative;
     z-index: 1;
+
+    background: url('../IMAGEMFUNDo.webp') no-repeat center center;
+    background-size: cover;
+}
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.747); /* camada escura */
+    z-index: -1;  
 }
 
-header h1 {
+header h1, 
+main h1 {
     padding: 15px;
     font-size: 5em;
     letter-spacing: .1em;
     white-space: nowrap;
     overflow: hidden;
     border-right: .15em solid orange;
-
     animation: typing 2s steps(30, end), remove-caret 0.1s forwards 2s; 
-
 }
+
 .highlight {
     color: rgb(255, 136, 0); /* ou #ff6600 para um laranja mais vibrante */
 }
@@ -75,7 +87,7 @@ header .buttons {
     gap: 20px;
 }
 
-header .buttons button {
+header .buttons a {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid orange;
     color: white;
@@ -87,9 +99,141 @@ header .buttons button {
     transition: all 0.3s ease;
 }
 
-header .buttons button:hover {
+header .buttons a:hover {
     transform: scale(1.1);
     background: rgba(255, 165, 0, 0.8);
     color: #000;
     box-shadow: 0 0 15px orange;
 }
+
+/* Main */
+main {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 40px 20px;
+    background: #111;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+main h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.2em;
+    max-width: 600px;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+.sneaker-showcase {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    max-width: 90%;
+    margin: 20px auto;
+
+}
+
+.sneaker-showcase img {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background: white;
+    padding: 10px;
+    object-fit: cover;
+
+}
+
+.sneaker-showcase img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px orange;
+}
+
+.sneaker-showcase img:active {
+    transform: scale(0.95);
+}
+
+.about {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ddd;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+
+}
+
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+    font-size: 0.9em;
+    font-family: "DM Sans", sans-serif;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    background: #222;
+    transition: background 0.3s ease;
+    font-weight: normal;
+    font-size: 1em;
+    letter-spacing: 0.02em;
+    color: #ccc;
+    padding: 15px 10px;
+    font-family: "DM Sans", sans-serif;
+
+}
+
+footer a {
+    color: orange;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ff6600;
+}
+
