@@ -168,19 +168,6 @@ main p {
 
 }
 
-.sneaker-showcase::-webkit-scrollbar {
-    height: 8px;
-}
-
-.sneaker-showcase::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.sneaker-showcase::-webkit-scrollbar-thumb {
-    background: orange;
-    border-radius: 4px;
-}
-
 .sneaker-showcase p {
     font-size: 0.9em;
     color: #000000;

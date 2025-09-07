@@ -74,10 +74,12 @@
     .about h2 {
         font-size: 2em; /* reduz tamanho do subtítulo */
     }
+    
     .about p {
         font-size: 1em; /* reduz tamanho do parágrafo */
         padding: 0 15px; /* evita que o texto encoste nas bordas */
     }
+
     footer p {
         font-size: 0.8em; /* reduz tamanho do texto do rodapé */
         padding: 0 10px; /* evita que o texto encoste nas bordas */
