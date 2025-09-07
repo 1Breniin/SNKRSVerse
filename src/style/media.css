@@ -3,23 +3,83 @@
     header h1 {
         font-size: 3em; /* reduz tamanho do título */
         padding: 10px;
+        text-align: center; /* centraliza o título */
+        margin-bottom: 10px;
+
     }
 
     header p {
         font-size: 1.2em; /* reduz tamanho do parágrafo */
         margin-top: 8px;
         padding: 0 20px; /* evita que o texto encoste nas bordas */
+        max-width: 100%; /* permite que o parágrafo ocupe toda a largura disponível */
+
     }
 
     header .buttons {
         flex-direction: column; /* coloca os botões em coluna */
         gap: 15px;
         margin-top: 20px;
+
     }
 
     header .buttons button {
         width: 80%; /* ocupa mais espaço na tela pequena */
         font-size: 1em;
         padding: 12px 20px;
+        margin: 0 auto; /* centraliza os botões */
+        display: block;
+    }
+
+    main h1 {
+        font-size: 2.5em; /* reduz tamanho do título principal */
+        margin-bottom: 15px;
+    
+    }
+    main p {
+        font-size: 1em; /* reduz tamanho do parágrafo */
+        padding: 0 15px; /* evita que o texto encoste nas bordas */
+        max-width: 100%; /* permite que o parágrafo ocupe toda a largura disponível */
+
+    }
+
+   .sneaker-showcase {
+    flex-direction: row;
+    flex-wrap: nowrap; /* força todas na mesma linha */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto; /* adiciona rolagem horizontal se necessário */   
+    transition: box-shadow 0.3s ease;
+    max-width: 100%;
+    margin: 10px auto;
+    gap: 10px;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: orange transparent; /* Firefox */
+    }
+
+    .sneaker-showcase img {
+        width: 100%; /* ajusta para caber todas na mesma linha */
+        margin: 0;
+    }
+
+    .about {
+        max-width: 100%; /* permite que a seção ocupe toda a largura disponível */
+        margin: 0 auto 30px auto;
+        padding: 0 10px; /* evita que o texto encoste nas bordas */
+        text-align: center; /* centraliza o texto */
+    }
+    
+    .about h2 {
+        font-size: 2em; /* reduz tamanho do subtítulo */
+    }
+    .about p {
+        font-size: 1em; /* reduz tamanho do parágrafo */
+        padding: 0 15px; /* evita que o texto encoste nas bordas */
+    }
+    footer p {
+        font-size: 0.8em; /* reduz tamanho do texto do rodapé */
+        padding: 0 10px; /* evita que o texto encoste nas bordas */
     }
 }

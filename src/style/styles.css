@@ -47,9 +47,15 @@ header {
     color: white;
     position: relative;
     z-index: 1;
-
-    background: url('../IMAGEMFUNDo.webp') no-repeat center center;
+    background: url('../images/IMAGEMFUNDo.webp') no-repeat center center/cover;
     background-size: cover;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+
 }
 header::before {
     content: "";
@@ -114,21 +120,22 @@ main {
     justify-content: center;
     align-items: center; 
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     position: relative;
     z-index: 1;
     padding: 40px 20px;
-    background: #111;
+    background: #ffffff;
     font-family: "DM Sans", sans-serif;
     font-weight: 300;
     letter-spacing: 0.02em;
     line-height: 1.6;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 main h1 {
     font-size: 4em;
     margin-bottom: 20px;
+    color: #000000;
+
 }
 
 main p {
@@ -136,7 +143,16 @@ main p {
     max-width: 600px;
     line-height: 1.6;
     padding: 0 20px;
+    color: #000;
+    margin-bottom: 40px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-align: justify;
+
 }
+
+
 
 .sneaker-showcase {
     display: flex;
@@ -145,13 +161,41 @@ main p {
     justify-content: center;
     padding: 20px;
     margin-bottom: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
     max-width: 90%;
     margin: 20px auto;
+
+}
+
+.sneaker-showcase::-webkit-scrollbar {
+    height: 8px;
+}
+
+.sneaker-showcase::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sneaker-showcase::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 4px;
+}
+
+.sneaker-showcase p {
+    font-size: 0.9em;
+    color: #000000;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    padding: 0 5px;
+    line-height: 1.4;
+    max-width: 250px;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
 }
 
@@ -187,28 +231,26 @@ main p {
     font-size: 2.5em;
     margin-bottom: 15px;
     text-align: center;
+    color: #000000;
 }
 .about p {
     font-size: 1.1em;
     line-height: 1.6;
-    color: #ddd;
     text-align: justify;
     letter-spacing: 0.02em;
-    margin-bottom: 15px;
     font-family: "DM Sans", sans-serif;
     font-weight: 300;
-
+    color: #000;
+    padding: 0 10px;
+    margin-bottom: 20px;
 }
 
 
 footer {
-    background: #111;
     color: white;
     text-align: center;
-    padding: 20px 0;
     position: relative;
     z-index: 1;
-    font-size: 0.9em;
     font-family: "DM Sans", sans-serif;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
@@ -217,11 +259,7 @@ footer {
     transition: background 0.3s ease;
     font-weight: normal;
     font-size: 1em;
-    letter-spacing: 0.02em;
-    color: #ccc;
     padding: 15px 10px;
-    font-family: "DM Sans", sans-serif;
-
 }
 
 footer a {
