@@ -71,3 +71,11 @@ if (darkToggle) {
         setDarkMode(!document.body.classList.contains('dark-mode'));
     });
 }
+
+
+const menuBtn = document.querySelector('.menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
+});

@@ -82,6 +82,9 @@
     font-size: 2rem;
     width: 19ch;          /* ajuste para o comprimento do texto */
   }
+
+  .nav { display: none; }
+  .menu-btn { display: inline-block; }
 }
 
 /* Tablets / telas médias */
