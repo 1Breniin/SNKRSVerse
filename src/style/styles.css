@@ -3,6 +3,16 @@
    ========================== */
 @charset "UTF-8";
 
+@keyframes typing {
+  from { width: 0; }
+  to { width: 16ch; } /* ajuste para o número de caracteres do seu texto */
+}
+
+@keyframes remove-caret {
+  from { border-right-color: orange; }
+  to { border-right-color: transparent; }
+}
+
 :root {
     --primary: #ff8800;
     --primary-dark: #ff6600;
@@ -15,6 +25,7 @@
     --transition: 0.3s cubic-bezier(.4,0,.2,1);
     --font-main: "DM Sans", Arial, Helvetica, sans-serif;
 }
+
 
 *, *::before, *::after {
     margin: 0;
@@ -219,15 +230,27 @@ h1 {
   margin-bottom: 1rem;
   text-align: center;
 }
+/* Títulos Hero */
 .title-main {
   display: block;
   color: #fff;
+  white-space: nowrap; /* evita quebra de linha */
+  overflow: hidden;    /* esconde o texto que "ainda não apareceu" */
+  border-right: 2px solid orange; /* cursor */
+  width: 16ch;          /* ajuste para o comprimento do texto */
+  animation: typing 2s steps(16, end), remove-caret 0.1s forwards 2s;
 }
+
 .title-gradient {
   display: block;
   background: linear-gradient(90deg, orange, #ff6600);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  overflow: hidden; 
+  border-right: 2px solid orange;
+  width: 16ch;          
+  animation: typing 2s steps(16, end), remove-caret 0.1s forwards 2s;
 }
 
 /* Subtitulo */
@@ -263,15 +286,18 @@ h1 {
   color: #fff;
 }
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(255,140,0,0.6);
+  box-shadow: 0 0 30px rgba(255,140,0,0.6);
+
 }
 .btn-outline {
-  border: 2px solid orange;
-  color: orange;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.788);
+  border: 2px solid rgb(255, 102, 0); /* permanece laranja */
+  color: rgb(255, 123, 0);
 }
+
 .btn-outline:hover {
-  background: rgba(255,140,0,0.1);
+  background: rgb(255, 140, 0);
+  box-shadow: 0 0 30px rgb(255, 140, 0);
 }
 
 /* Scroll Indicator */
@@ -551,7 +577,7 @@ h1 {
   width: 80%;
   height: 80%;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* força a imagem a ficar branca */
+  filter: brightness(0) invert(1); /* só para a imagem */
 }
 
 @media (min-width: 768px) {

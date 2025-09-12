@@ -12,6 +12,7 @@
         width: 140px;
         height: 140px;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -20,6 +21,23 @@
     }
     .menu-btn {
         display: inline-flex; /* Mostra botão */
+    }
+
+    @media (min-width: 768px) {
+  .sneakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+    .sneaker-showcase {
+        gap: 12px;
+    }
+    .sneaker-item {
+        width: 150px;
+    }
+    .sneaker-showcase img {
+        width: 120px;
+        height: 120px;
     }
 }
 
