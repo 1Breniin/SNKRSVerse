@@ -14,14 +14,12 @@
     }
 }
 
-@media (max-width: 700px) {
-    .sneaker-dia-content {
-        flex-direction: column;
-        gap: 18px;
+@media (max-width: 768px) {
+    .nav {
+        display: none; /* Esconde menu desktop */
     }
-    .sneaker-dia-content img {
-        width: 120px;
-        height: 120px;
+    .menu-btn {
+        display: inline-flex; /* Mostra botão */
     }
 }
 

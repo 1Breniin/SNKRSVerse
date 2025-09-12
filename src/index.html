@@ -8,86 +8,418 @@
     <meta name="description" content="Explore o universo dos sneakers mais exclusivos. Onde paixão e estilo se encontram.">
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/media.css">
+    <script src="https://kit.fontawesome.com/247d5108cb.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar" aria-label="Menu principal">
+
+<div class="actions">
+    <button class="search-btn"><i class="fas fa-search"></i></button>
+    <button class="menu-btn" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <button class="darkmode-btn" id="darkmode-toggle" title="Alternar modo escuro">
+        <i class="fas fa-moon"></i>
+    </button>
+</div>
+
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
             <div class="logo">
-                <a href="index.html" aria-label="Página inicial SNKRS Verse">
+                <div class="logo-box">
                     <img src="images/Logo.webp" alt="Logo SNKRS Verse">
-                </a>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="header-content">
-            <h1>
-                SNKRS <span class="highlight">Verse</span>
-            </h1>
-            <p>
-                Explore o universo dos sneakers mais exclusivos.<br>
-                Onde paixão e estilo se encontram.
-            </p>
-            <div class="buttons">
-                <a href="#colecao" class="btn">Explorar coleção</a>
-                <a href="sobre.html" class="btn btn-secondary">Saiba mais</a>
+            <!-- Navegação Desktop -->
+            <nav class="nav">
+                <a href="/">Início</a>
+                <a href="#sneakers-do-dia">Sneakers do Dia</a>
+                <a href="#marcas">Marcas</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+            <!-- Search + Botão Mobile -->
+            <div class="actions">
+                <button class="search-btn" title="Buscar"><i class="fas fa-search"></i></button>
+                <button class="menu-btn" id="menu-toggle" title="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button class="darkmode-btn" id="darkmode-toggle" title="Alternar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
+        </div>
+        </div>
+        <!-- MENU MOBILE-->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="/">Início</a>
+            <a href="#sneakers-do-dia">Sneakers do Dia</a>
+            <a href="#marcas">Marcas</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#sobre">Sobre</a>
         </div>
     </header>
 
+    <!-- ================= MAIN ================= -->
     <main>
-    <section class="sneaker-showcase" id="colecao" aria-label="Coleção de Sneakers">
-        <h2 class="visually-hidden">Coleção de Sneakers</h2>
-        <div class="sneaker-item">
-            <img src="images/Adidas1.avif" alt="Tênis Adidas edição limitada" loading="lazy">
-            <p class="sneaker-brand">Adidas</p>
-        </div>
-        <div class="sneaker-item">
-            <img src="images/NIKE1.avif" alt="Tênis Nike exclusivo" loading="lazy">
-            <p class="sneaker-brand">Nike</p>
-        </div>
-        <div class="sneaker-item">
-            <img src="images/JORDAN1.avif" alt="Tênis Jordan especial" loading="lazy">
-            <p class="sneaker-brand">Jordan</p>
-        </div>
-        <div class="sneaker-item">
-            <img src="images/PUMA1.avif" alt="Tênis Puma raro" loading="lazy">
-            <p class="sneaker-brand">Puma</p>
-        </div>
-    </section>
-
-    <!-- Sneaker do Dia -->
-    <section class="sneaker-dia" aria-label="Sneaker do Dia">
-        <h2>Sneaker do Dia</h2>
-        <div class="sneaker-dia-content">
-            <img src="images/JORDAN1.avif" alt="Air Jordan 1 Chicago" loading="lazy">
-            <div>
-                <h3>Air Jordan 1 Chicago</h3>
-                <p>
-                    Um dos modelos mais icônicos da história dos sneakers, o Air Jordan 1 Chicago representa o início da parceria lendária entre Michael Jordan e a Nike. Lançado em 1985, este tênis é desejado por colecionadores do mundo todo.
-                </p>
-                <a href="https://www.nike.com.br/snkrs/womens-air-jordan-1-high-og-098610.html" target="_blank" class="btn">Ver mais detalhes</a>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-bg">
+                <img src="images/download.jpg" alt="Iconic Air Jordan sneaker" />
+                <div class="overlay"></div>
             </div>
-        </div>
-    </section>
+            <!-- Floating elements -->
+            <div class="float float-1"></div>
+            <div class="float float-2"></div>
+            <div class="float float-3"></div>
+            <!-- Content -->
+            <div class="hero-content">
+                <!-- Title -->
+                <h1>
+                    <span class="title-main">SNKRS</span>
+                    <span class="title-gradient">VERSE</span>
+                </h1>
+                <!-- Subtitle -->
+                <p class="subtitle">
+                    Descubra a história, as especificações e os preços dos sneakers mais icônicos do mundo. 
+                    Uma experiência visual única para verdadeiros entusiastas.
+                </p>
+                <!-- CTA Buttons -->
+                <div class="hero-buttons">
+                    <a href="#catalogo" class="btn btn-primary">
+                        Explorar Sneakers →
+                    </a>
+                    <a href="#colecao" class="btn btn-outline">
+                        Ver Coleção Completa
+                    </a>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </section>
 
-        <section class="about">
-            <h2>Sobre SNKRS Verse</h2>
-            <p>
-                SNKRS Verse é uma comunidade para entusiastas de calçados.
-                Descubra edições limitadas, colaborações exclusivas e as últimas tendências do mundo sneaker.
-            </p>
+        <!-- SNEAKERS DO DIA -->
+        <section id="sneakers-do-dia" class="sneakers-section">
+            <div class="container">
+                <!-- Header da Seção -->
+                <div class="section-header">
+                    <div class="badge">
+                        <i class="fas fa-star"></i>
+                        <span>Destaque Diário</span>
+                    </div>
+                    <h2>
+                        <span class="text-normal">Sneakers</span>
+                        <span class="text-gradient"> do Dia</span>
+                    </h2>
+                    <p>
+                        Os modelos mais comentados e desejados pelos sneakerheads hoje
+                    </p>
+                </div>
+                <!-- Grid de Sneakers -->
+                <div class="sneakers-grid">
+                    <!-- Card 1 -->
+                    <div class="sneaker-card">
+                        <div class="sneaker-image">
+                            <img src="images/Sneakers/Air Force 1.webp" alt="Nike Air Force 1 '07">
+                            <span class="badge-status trending">Trending</span>
+                            <div class="popularity">
+                                <i class="fas fa-chart-line"></i>
+                                <span>9.2</span>
+                            </div>
+                        </div>
+                        <div class="sneaker-content">
+                            <div class="sneaker-meta">
+                                <span class="brand">Nike</span>
+                                <span class="year"><i class="fas fa-calendar-alt"></i> 2023</span>
+                            </div>
+                            <h3>Air Force 1 '07</h3>
+                            <div class="sneaker-footer">
+                                <div class="price-info">
+                                    <span>Faixa de preço</span>
+                                    <strong>R$ 599 - R$ 899</strong>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="sneaker-card">
+                        <div class="sneaker-image">
+                            <img src="images/Sneakers/Yeezy Boost 350 V2.webp" alt="Adidas Yeezy Boost 350 V2">
+                            <span class="badge-status limited">Limited</span>
+                            <div class="popularity">
+                                <i class="fas fa-chart-line"></i>
+                                <span>9.8</span>
+                            </div>
+                        </div>
+                        <div class="sneaker-content">
+                            <div class="sneaker-meta">
+                                <span class="brand">Adidas</span>
+                                <span class="year"><i class="fas fa-calendar-alt"></i> 2023</span>
+                            </div>
+                            <h3>Yeezy Boost 350 V2</h3>
+                            <div class="sneaker-footer">
+                                <div class="price-info">
+                                    <span>Faixa de preço</span>
+                                    <strong>R$ 1.299 - R$ 2.500</strong>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="sneaker-card">
+                        <div class="sneaker-image">
+                            <img src="images/Sneakers/Air Jordan 4 Black Cat.webp" alt="Jordan Air Jordan 4 Black Cat">
+                            <span class="badge-status classic">Classic</span>
+                            <div class="popularity">
+                                <i class="fas fa-chart-line"></i>
+                                <span>9.5</span>
+                            </div>
+                        </div>
+                        <div class="sneaker-content">
+                            <div class="sneaker-meta">
+                                <span class="brand">Jordan</span>
+                                <span class="year"><i class="fas fa-calendar-alt"></i> 2020</span>
+                            </div>
+                            <h3>Air Jordan 4 Black Cat</h3>
+                            <div class="sneaker-footer">
+                                <div class="price-info">
+                                    <span>Faixa de preço</span>
+                                    <strong>R$ 1.599 - R$ 3.200</strong>
+                                </div>
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARCAS -->
+        <section id="marcas" class="brands-section">
+            <div class="container">
+                <!-- Header da Seção -->
+                <div class="section-header">
+                    <div class="badge">
+                        <i class="fas fa-crown"></i>
+                        <span>Marcas Icônicas</span>
+                    </div>
+                    <h2>
+                        <span class="text-normal">As Maiores</span>
+                        <span class="text-gradient"> Marcas</span>
+                    </h2>
+                    <p>
+                        Conheça a história e os modelos mais emblemáticos das principais marcas de sneakers
+                    </p>
+                </div>
+                <!-- Grid de Marcas -->
+                <div class="brands-grid">
+                    <!-- Card Nike -->
+                    <div class="brand-card">
+                        <div class="brand-header">
+                            <div class="brand-icon gradient-orange">
+                                <img src="images/logos/Nike.webp" alt="">
+                            </div>
+                            <div>
+                                <h3>Nike</h3>
+                                <p>Fundada em 1964</p>
+                            </div>
+                            <button class="card-btn"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <p class="brand-desc">
+                            Just Do It - A marca mais icônica do mundo dos sneakers
+                        </p>
+                        <div class="brand-info">
+                            <div>
+                                <span>Modelos no catálogo</span>
+                                <strong>200+ modelos</strong>
+                            </div>
+                            <div>
+                                <span>Modelos em destaque</span>
+                                <strong>Air Jordan, Air Force 1, Dunk</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Adidas -->
+                    <div class="brand-card">
+                        <div class="brand-header">
+                            <div class="brand-icon gradient-blue">
+                                <img src="images/logos/Adidas.webp" alt="">
+                            </div>
+                            <div>
+                                <h3>Adidas</h3>
+                                <p>Fundada em 1949</p>
+                            </div>
+                            <button class="card-btn"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <p class="brand-desc">
+                            Impossible is Nothing - Tradição alemã em inovação
+                        </p>
+                        <div class="brand-info">
+                            <div>
+                                <span>Modelos no catálogo</span>
+                                <strong>150+ modelos</strong>
+                            </div>
+                            <div>
+                                <span>Modelos em destaque</span>
+                                <strong>Yeezy, Stan Smith, Ultraboost</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Jordan -->
+                    <div class="brand-card">
+                        <div class="brand-header">
+                            <div class="brand-icon gradient-red">
+                                <img src="images/logos/Jordan.webp" alt="">
+                            </div>
+                            <div>
+                                <h3>Jordan</h3>
+                                <p>Fundada em 1984</p>
+                            </div>
+                            <button class="card-btn"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <p class="brand-desc">
+                            Jumpman - O legado eterno de Michael Jordan
+                        </p>
+                        <div class="brand-info">
+                            <div>
+                                <span>Modelos no catálogo</span>
+                                <strong>80+ modelos</strong>
+                            </div>
+                            <div>
+                                <span>Modelos em destaque</span>
+                                <strong>Air Jordan 1, 4, 11</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card New Balance -->
+                    <div class="brand-card">
+                        <div class="brand-header">
+                            <div class="brand-icon gradient-gray">
+                                <img src="images/logos/New Balance.webp" alt="">
+                            </div>
+                            <div>
+                                <h3>New Balance</h3>
+                                <p>Fundada em 1906</p>
+                            </div>
+                            <button class="card-btn"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <p class="brand-desc">
+                            Endorsed by No One - Qualidade acima de tudo
+                        </p>
+                        <div class="brand-info">
+                            <div>
+                                <span>Modelos no catálogo</span>
+                                <strong>120+ modelos</strong>
+                            </div>
+                            <div>
+                                <span>Modelos em destaque</span>
+                                <strong>990, 2002R, 1906R</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botão CTA -->
+                <div class="section-cta">
+                    <button class="cta-btn">Ver Todas as Marcas <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 SNKRS Verse. Todos os direitos reservados.</p>
-        <p>
-            <a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a>
-        </p>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Brand -->
+            <div class="brand">
+                <div class="brand-logo"> <img src="images/Logo.webp" alt="Logo SNKRS Verse"></div>
+                <span class="brand-name">SNKRS VERSE</span>
+                <p class="brand-text">
+                    O universo dos sneakers em um só lugar. Descubra histórias, especificações e preços dos tênis mais icônicos do mundo.
+                </p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <!-- Links -->
+            <div class="footer-links">
+                <h3>Explorar</h3>
+                <ul>
+                    <li><a href="#">Sneakers do Dia</a></li>
+                    <li><a href="#">Marcas</a></li>
+                    <li><a href="#">Catálogo Completo</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Lançamentos</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Marcas</h3>
+                <ul>
+                    <li><a href="#">Nike</a></li>
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">Jordan</a></li>
+                    <li><a href="#">New Balance</a></li>
+                    <li><a href="#">Vans</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Sobre o SNKRS Verse</a></li>
+                    <li><a href="#">Guia de Tamanhos</a></li>
+                    <li><a href="#">Autenticidade</a></li>
+                    <li><a href="#">Preços de Mercado</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <h3>Fique por dentro das novidades</h3>
+            <p>Receba notificações sobre novos lançamentos e sneakers em destaque</p>
+            <form>
+                <input type="email" placeholder="Seu melhor e-mail">
+                <button type="submit">Inscrever</button>
+            </form>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <p>© 2024 SNKRS Verse. Feito com <span class="heart">❤</span> para a cultura sneaker.</p>
+            <div class="policies">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="script.js"></script>
 </body>
 </html>
