@@ -77,14 +77,19 @@
     text-align: center;
   }
 
-  .title-main, .title-gradient {
-    width: 14ch;
+  .title-main{
     font-size: 2rem;
-    width: 19ch;          /* ajuste para o comprimento do texto */
+    width: 17ch;          /* ajuste para o comprimento do texto */
+  }
+
+.title-gradient {
+    font-size: 2rem;
+    width: 17ch;          /* ajuste para o comprimento do texto */
   }
 
   .nav { display: none; }
   .menu-btn { display: inline-block; }
+  
 }
 
 /* Tablets / telas médias */

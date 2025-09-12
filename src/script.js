@@ -1,11 +1,23 @@
 /* Mobile Menu Toggle */
 
 // Menu Mobile Toggle
-const menuToggle = document.getElementById("menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
+const menuBtn = document.querySelector('.menu-btn');
+const closeBtn = document.querySelector('.mobile-menu .close-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active");
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  mobileMenu.classList.remove('active');
+});
+
+/* Opcional: fechar clicando fora do menu */
+window.addEventListener('click', (e) => {
+  if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+    mobileMenu.classList.remove('active');
+  }
 });
 
 /* Scroll suave */
@@ -73,9 +85,3 @@ if (darkToggle) {
 }
 
 
-const menuBtn = document.querySelector('.menu-btn');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active");
-});

@@ -144,37 +144,47 @@ body {
 
 /* Mobile Menu */
 .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;      /* começa fora da tela */
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
     background-color: #111;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
-    z-index: 999;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    z-index: 10000;
+    transition: right 0.4s ease;
+    display: flex;
 }
 
 .mobile-menu a {
     color: #fff;
-    padding: 0.75rem 1rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    width: 100%;
-    text-align: center;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.mobile-menu a:hover {
-    background-color: #222;
+/* Links animam quando o menu aparece */
+.mobile-menu.active a {
+    opacity: 1;
+    transform: translateX(0);
 }
 
+/* Ativa menu deslizante */
 .mobile-menu.active {
-    display: flex;
+    right: 0;
 }
 
-/* Esconder menu-btn no desktop */
-.menu-btn {
-  display: none;
+/* Close button no topo */
+.mobile-menu .close-btn {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
 }
 
 /* ==========================
@@ -894,6 +904,7 @@ h1 {
   color: #aaa;
   text-decoration: none;
   transition: color 0.3s;
+  text-decoration: none;
 }
 
 .bottom-bar .policies a:hover {
@@ -903,6 +914,7 @@ h1 {
 .heart {
   color: var(--primary-dark);
 }
+
 
 /* ==========================
    Acessibilidade & Utilidades
@@ -958,19 +970,4 @@ body.dark-mode .btn-outline {
 }
 body.dark-mode .btn-outline:hover {
     background: rgba(255,255,255,0.08);
-}
-
-
-@media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
-  .menu-btn {
-    display: inline-block;
-  }
-}
-
-/* Esconder menu-btn no desktop */
-.menu-btn {
-  display: none;
 }
