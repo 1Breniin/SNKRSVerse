@@ -1,92 +1,118 @@
+/* Mobile / tablets menores */
 @media (max-width: 900px) {
-    header h1 {
-        font-size: 2.8em;
-    }
-    .sneaker-showcase {
-        gap: 16px;
-    }
-    .sneaker-item {
-        width: 180px;
-    }
-    .sneaker-showcase img {
-        width: 140px;
-        height: 140px;
-    }
 
-}
+  /* Header */
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 1rem;
+  }
 
-@media (max-width: 768px) {
-    .nav {
-        display: none; /* Esconde menu desktop */
-    }
-    .menu-btn {
-        display: inline-flex; /* Mostra botão */
-    }
+  /* Navegação Desktop escondida */
+  .nav {
+    display: none;
+  }
 
-    @media (min-width: 768px) {
+  /* Botão do menu ativo */
+  .menu-btn {
+    display: inline-block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Search + Actions */
+  .actions {
+    gap: 0.5rem;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .title-main, .title-gradient {
+    width: 12ch; /* ajusta texto animado */
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0 3rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+
+  /* Sneakers Grid */
   .sneakers-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .sneaker-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Brands Grid */
+  .brands-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer .container {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title-main, .title-gradient {
+    width: 14ch;
+    font-size: 2rem;
+    width: 19ch;          /* ajuste para o comprimento do texto */
   }
 }
 
-    .sneaker-showcase {
-        gap: 12px;
-    }
-    .sneaker-item {
-        width: 150px;
-    }
-    .sneaker-showcase img {
-        width: 120px;
-        height: 120px;
-    }
+/* Tablets / telas médias */
+@media (min-width: 901px) and (max-width: 1023px) {
+
+  .sneakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .title-main, .title-gradient {
+    width: 14ch;
+    font-size: 2rem;
+    width: 16ch;          /* ajuste para o comprimento do texto */
+  }
 }
 
-@media (max-width: 600px) {
-    .navbar {
-        height: 48px;
-    }
-    .logo img {
-        width: 54px;
-        height: 54px;
-        margin-right: 10px;
-    }
-    .nav-links {
-        gap: 16px;
-    }
+/* Pequenos ajustes para telas grandes mas ainda menores que 1200px */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .sneakers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    header {
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    header h1 {
-        font-size: 1.5em;
-        padding: 8px 0;
-    }
-    header .buttons a {
-        padding: 10px 16px;
-        font-size: 1em;
-    }
-    .about h2 {
-        font-size: 1.3em;
-    }
-    .about, main p {
-        font-size: 1em;
-        padding: 0 2px;
-    }
-
-    .sneaker-showcase {
-        flex-direction: column;
-        align-items: center;
-    }
-    .sneaker-item {
-        width: 98vw;
-        max-width: 320px;
-    }
-    .sneaker-showcase img {
-        width: 90vw;
-        max-width: 220px;
-        height: auto;
-    }
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
