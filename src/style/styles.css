@@ -796,6 +796,7 @@ h1 {
   font-size: 1.2rem;
   transition: color 0.3s;
   display: inline-block;
+  
 }
 .socials a:hover {
   color: var(--primary-dark);
