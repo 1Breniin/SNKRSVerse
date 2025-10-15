@@ -83,5 +83,3 @@ if (darkToggle) {
         setDarkMode(!document.body.classList.contains('dark-mode'));
     });
 }
-
-
